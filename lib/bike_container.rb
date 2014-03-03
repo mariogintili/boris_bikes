@@ -19,14 +19,19 @@ module BikeContainer
   end
 
   def dock(bike)
+    raise_error_if_not_a(bike)
     raise "Station is full" if full?
     bikes << bike
   end
 
   def release(bike)
     raise "There are no bikes available" if bikes == []
-    raise "You can only release bikes" if bike.class != Bike
+    raise_error_if_not_a(bike)
     bikes.delete(bike)
+  end
+
+  def raise_error_if_not_a(bike)
+    raise "You can only perform this on bikes" if bike.class != Bike
   end
 
   def full?
