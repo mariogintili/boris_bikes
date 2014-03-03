@@ -38,6 +38,11 @@ require './lib/bike_container'
     expect(holder.available_bikes).to eq([working_bike])
   end
 
+  it "should raise an error if we try to release a bike that's not there" do
+    holder.bike_count == []
+    expect{ holder.release(bike) }.to raise_error(RuntimeError)
+  end
+
   def fill_holder(holder)
     holder.capacity.times { holder.dock(Bike.new) }
   end
