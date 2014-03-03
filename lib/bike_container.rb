@@ -25,6 +25,7 @@ module BikeContainer
 
   def release(bike)
     raise "There are no bikes available" if bikes == []
+    raise "You can only release bikes" if bike.class != Bike
     bikes.delete(bike)
   end
 

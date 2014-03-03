@@ -39,8 +39,12 @@ require './lib/bike_container'
   end
 
   it "should raise an error if we try to release a bike that's not there" do
-    holder.bike_count == []
     expect{ holder.release(bike) }.to raise_error(RuntimeError)
+  end
+
+  it "should raise am error if we try to release something that's not a bike" do
+    holder.dock(bike)
+    expect{ holder.release("not a bike") }.to raise_error(RuntimeError)
   end
 
   def fill_holder(holder)
