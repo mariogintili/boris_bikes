@@ -14,10 +14,6 @@ module BikeContainer
     @capacity = value
   end
 
-  def bike_count
-    bikes.count
-  end
-
   def dock(bike)
     raise_error_if_not_a(bike)
     raise "Station is full" if full?
@@ -35,7 +31,7 @@ module BikeContainer
   end
 
   def full?
-    bike_count == capacity
+    bikes.count == capacity
   end
 
   def available_bikes
