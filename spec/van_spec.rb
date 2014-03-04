@@ -27,11 +27,8 @@ require 'docking_station'
 			end
 
 			it "takes only broken bikes to the garage" do
-				 van.dock(@working_bike)
-				 van.dock(@working_bike)
-				 van.dock(@broken_bike)
 				 van.broken_bikes.each { |bike| fake_garage.bikes << bike  }
-				 expect(fake_garage.broken_bikes.count).to eq(3)
+				 expect(fake_garage.broken_bikes.count).to eq(2)
 			end
 
 			it "takes only fixed bikes to the docking station" do
