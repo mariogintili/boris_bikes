@@ -1,11 +1,13 @@
 require_relative "../lib/van"
 require 'bike'
+require 'docking_station'
 	class FakeGarage; include BikeContainer end
 
 	describe Van do
 
 		let(:van) {Van.new}
 		let(:fake_garage) {FakeGarage.new}
+		let(:docking_station) {DockingStation.new}
 
 		context "should" do
 
@@ -27,7 +29,13 @@ require 'bike'
 				 van.broken_bikes.each { |bike| fake_garage.bikes << bike  }
 				 expect(fake_garage.broken_bikes.count).to eq(1)
 			end
+
+			it "takes only fixed bikes to the docking station" do
+				van.dock(@working_bike)
+				van.dock(@working_bike)
+				van.dock(@broken_bike)
+				van.available_bikes.each {|bike| docking_station.bikes << bike }
+				expect(docking_station.available_bikes.count).to eq(2)
+			end
 		end
 	end
-
-	# Take in the array not turn it in to an array 
