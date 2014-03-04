@@ -23,7 +23,7 @@ module BikeContainer
   def release(bike)
     raise "There are no bikes available" if bikes == []
     raise_error_if_not_a(bike)
-    bikes.delete(bike)
+    bikes.delete(bike) if bike.broken? == false
   end
 
   def raise_error_if_not_a(bike)
@@ -40,10 +40,6 @@ module BikeContainer
 
   def broken_bikes
     bikes.select {|bike| bike.broken? }
-  end
-
-  def unload(bike)
-    (bikes << bike).flatten
   end
 
   def broken?
