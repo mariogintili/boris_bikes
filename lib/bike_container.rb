@@ -41,4 +41,12 @@ module BikeContainer
   def broken_bikes
     bikes.select {|bike| bike.broken? }
   end
+
+  def unload(bike)
+    (bikes << bike).flatten
+  end
+
+  def broken?
+    @broken
+  end
 end

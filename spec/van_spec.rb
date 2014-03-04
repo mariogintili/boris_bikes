@@ -15,14 +15,19 @@ require 'bike'
 				@broken_bike.break
 			end
 
-				it "load broken bikes to the van" do
-					van.dock(@broken_bike)
-					expect(van.broken_bikes.count).to eq(1)
-				end
+			it "load broken bikes to the van" do
+				van.dock(@broken_bike)
+				expect(van.broken_bikes.count).to eq(1)
+			end
 
-				it "take a broken bike to the garage" do
-					 van.dock(@broken_bike)
-					 expect(fake_garage.broken_bikes.count).to eq(1)
-				end
+			it "takes only broken bikes to the garage" do
+				 van.dock(@working_bike)
+				 van.dock(@working_bike)
+				 van.dock(@broken_bike)
+				 van.broken_bikes.each { |bike| fake_garage.bikes << bike  }
+				 expect(fake_garage.broken_bikes.count).to eq(1)
+			end
 		end
 	end
+
+	# Take in the array not turn it in to an array 
