@@ -6,7 +6,6 @@ require 'docking_station'
 	describe Van do
 
 		let(:van) {Van.new}
-		let(:fake_garage) {FakeGarage.new}
 		let(:docking_station) {DockingStation.new}
 		let(:garage) {FakeGarage.new}
 
@@ -27,8 +26,8 @@ require 'docking_station'
 			end
 
 			it "takes only broken bikes to the garage" do
-				 van.broken_bikes.each { |bike| fake_garage.bikes << bike  }
-				 expect(fake_garage.broken_bikes.count).to eq(2)
+				 van.broken_bikes.each { |bike| garage.bikes << bike  }
+				 expect(garage.broken_bikes.count).to eq(2)
 			end
 
 			it "takes only fixed bikes to the docking station" do
