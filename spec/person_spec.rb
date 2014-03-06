@@ -27,4 +27,12 @@ require 'docking_station'
 			mario.rent_from(station.available_bikes)
 			expect { mario.rent_from(station.available_bikes) }.to raise_error(RuntimeError)
 		end
+
+		it "steals a bike from another person" do
+			station.dock(bike)
+			mario.rent_from(station.available_bikes)
+			jordan = Person.new
+			jordan.steal_bike_from(mario)
+			expect(jordan.has_bike?).to eq(true)
+		end
 	end
