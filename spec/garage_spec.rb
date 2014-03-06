@@ -21,6 +21,6 @@ describe Garage do
 
 	it "fixes bikes" do
 		garage.repair(@broken_bike)
-		expect(garage.broken_bikes.count).to eq(2)
+		expect(garage.broken_bikes.count).to eq(0)
 	end
 end

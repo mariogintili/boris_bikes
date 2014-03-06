@@ -3,6 +3,6 @@ class Garage
 	include BikeContainer
 
 	def repair(bike)
-		@broken = false
+		bike.fix
 	end
 end

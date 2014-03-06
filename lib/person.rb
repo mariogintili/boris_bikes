@@ -26,7 +26,7 @@
 	end
 
 	def steal_bike_from(person)
-		print "#{self} Just stole a bike from #{person}"
+		"#{self} Just stole a bike from #{person}"
 		bike << person.bike.pop
 	end
 
