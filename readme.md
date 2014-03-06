@@ -47,4 +47,19 @@ garage.bikes.count
 Fixing a broken bike that's in the garage:
 
 ```ruby
+broken_bike
+=> [#<Bike:0x00000101ab8a18 @broken=true>]
+garage.repair(broken_bike)
+=> [#<Bike:0x00000101ab8a18 @broken=false>]
+```
+
+** BONUS **, stealing a bike from one of the teachers:
+
+```ruby
+evgeny.has_bike?
+=> true
+mario.steal_bike_from(evgeny)
+=> [#<Bike:0x00000101ab8a18 @broken=false>]
+evgeny.has_bike?
+=> false
 ```
