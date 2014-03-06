@@ -63,3 +63,8 @@ mario.steal_bike_from(evgeny)
 evgeny.has_bike?
 => false
 ```
+
+Issues to be resolved:
+
+* Person can steal a broken bike
+* Docking stations can release a broken bike to a person
