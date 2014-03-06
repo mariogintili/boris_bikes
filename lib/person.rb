@@ -13,6 +13,7 @@
 	end
 
 	def rent_from(station)
+		raise "You can only use one bike at a time, you greedy bastard!" if @bike.length == 1
 		@bike << station.pop
 	end
 

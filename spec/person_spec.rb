@@ -20,4 +20,11 @@ require 'docking_station'
 			mario.fall_down
 			expect(mario.bike_broken?).to eq(true) 
 		end
+
+		it "raises an error if person tries to rent +1 bike" do
+			station.dock(bike)
+			station.dock(bike)
+			mario.rent_from(station.available_bikes)
+			expect { mario.rent_from(station.available_bikes) }.to raise_error(RuntimeError)
+		end
 	end
