@@ -53,7 +53,7 @@ garage.repair(broken_bike)
 => [#<Bike:0x00000101ab8a18 @broken=false>]
 ```
 
-** BONUS **, stealing a bike from one of the teachers:
+**BONUS:** stealing a bike from one of the teachers:
 
 ```ruby
 evgeny.has_bike?
