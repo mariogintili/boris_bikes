@@ -1,33 +1,39 @@
  class Person
 
- 	def initialize
-		@bike ||= []
-	end
-
 	def has_bike?
-		bike.empty? == false
+		!bike.nil?
 	end
 
 	def bike
 		@bike 
 	end
 
+	def bike=(bike)
+		@bike = bike
+	end
+
 	def rent_from(station)
-		raise "You can only use one bike at a time, you greedy bastard!" if @bike.length == 1
-		bike << station.pop
+		raise "You can only use one bike at a time, you greedy bastard!" if bike
+		self.bike=(station.pop)
 	end
 
 	def fall_down
-		bike[0].break
+		bike.break
 	end
 
 	def bike_broken?
-		bike[0].broken?
+		bike.broken?
 	end
 
 	def steal_bike_from(person)
 		"#{self} Just stole a bike from #{person}"
-		bike << person.bike.pop
+		self.bike = person.bike
+		# actually remove that bike from that person, WRITE A TEST
+		person.drop_bike		
+	end
+
+	def drop_bike
+		self.bike = nil
 	end
 
 end

@@ -30,6 +30,6 @@ require 'docking_station'
 		it "steals a bike from another person" do
 			jordan = Person.new
 			jordan.steal_bike_from(person)
-			expect(jordan.has_bike?).to eq(true)
+			expect(jordan).to have_bike
 		end
 	end
