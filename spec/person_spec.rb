@@ -32,4 +32,10 @@ require 'docking_station'
 			jordan.steal_bike_from(person)
 			expect(jordan).to have_bike
 		end
+
+		it "checks that the bike was stolen" do
+			evgeny = Person.new
+			evgeny.steal_bike_from(person)
+			expect(person.bike). to eq(nil)
+		end
 	end

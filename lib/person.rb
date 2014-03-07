@@ -28,7 +28,6 @@
 	def steal_bike_from(person)
 		"#{self} Just stole a bike from #{person}"
 		self.bike = person.bike
-		# actually remove that bike from that person, WRITE A TEST
 		person.drop_bike		
 	end
 
