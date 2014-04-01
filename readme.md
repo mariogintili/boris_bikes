@@ -1,12 +1,13 @@
 ## Boris Bikes project
 
 ----
-Week 3 project @ Makers Academy. For this project I built a system that
+Week 3 project at Makers Academy. For this project I built a system that
 manages **bikes** that can by rented by persons from **docking stations**
 and returned there at the end of the rental. Bikes can break while being used,
 in which case they won't be available for rental once returned. There's a **van**
 that takes in the broken bikes to a **garage** where they are fixed. The van can also
-be used to take the fixed bikes back to the ** docking station**.
+be used to take the fixed bikes back to the ** docking station**. This project was set
+by [@shadchnev](https://github.com/shadchnev)
 
 Although not a part of our exercise, I implemented a class **person** that can rent
 bikes from the station, and break them while used. Each person can only have one bike
@@ -16,7 +17,7 @@ bikes from each other. Technologies used:
 * Ruby
 * Test driven development with rspec
 * Git version control
-* OOP: modulating
+* Object-oriented-programming
 * CRC (class-responsibility-collaboration) cards.
 
 Here's a demostration on ```irb``` of the system, after loading all required files and creating
