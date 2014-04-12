@@ -6,7 +6,7 @@ manages **bikes** that can by rented by persons from **docking stations**
 and returned there at the end of the rental. Bikes can break while being used,
 in which case they won't be available for rental once returned. There's a **van**
 that takes in the broken bikes to a **garage** where they are fixed. The van can also
-be used to take the fixed bikes back to the ** docking station**. This project was set
+be used to take the fixed bikes back to the **docking station**. This project was set
 by [@shadchnev](https://github.com/shadchnev)
 
 Although not a part of our exercise, I implemented a class **person** that can rent
