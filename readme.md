@@ -60,7 +60,7 @@ garage.repair(broken_bike)
 evgeny.has_bike?
 => true
 mario.steal_bike_from(evgeny)
-=> [#<Bike:0x00000101ab8a18 @broken=false>]
+=> "Mario stole a bike from Evgeny!"
 evgeny.has_bike?
 => false
 ```
