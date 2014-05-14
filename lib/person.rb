@@ -1,5 +1,11 @@
  class Person
 
+ 	attr_reader :name
+
+ 	def initialize(name)
+ 		@name = name
+ 	end
+
 	def has_bike?
 		!bike.nil?
 	end

@@ -6,7 +6,7 @@ require 'docking_station'
 
 		let (:bike) {Bike.new}
 		let (:station) {DockingStation.new}
-		let (:person) {Person.new}
+		let (:person) {Person.new('Mario')}
 
 		before do
 			station.dock(bike)
@@ -32,13 +32,13 @@ require 'docking_station'
 		end
 
 		it "steals a bike from another person" do
-			jordan = Person.new
+			jordan = Person.new 'Jordan'
 			jordan.steal_bike_from(person)
 			expect(jordan).to have_bike
 		end
 
 		it "checks that the bike was stolen" do
-			evgeny = Person.new
+			evgeny = Person.new 'Evgeny'
 			evgeny.steal_bike_from(person)
 			expect(person.bike). to eq(nil)
 		end
