@@ -32,9 +32,9 @@
 	end
 
 	def steal_bike_from(person)
-		"#{self} Just stole a bike from #{person}"
 		self.bike = person.bike
-		person.drop_bike		
+		person.drop_bike	
+		"#{name} stole a bike from #{person.name}!"	
 	end
 
 	def drop_bike
