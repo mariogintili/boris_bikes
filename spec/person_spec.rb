@@ -13,6 +13,10 @@ require 'docking_station'
 			person.rent_from(station.available_bikes)
 		end
 
+		it '#name' do
+			expect(person.name).to eq('Mario')
+		end
+
 		it "should take a bike from docking station" do
 			expect(person.has_bike?).to eq(true) 
 		end
